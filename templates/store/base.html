@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Shop{% endblock title %}</title>
+    <title>{% block title %}BookStore{% endblock title %}</title>
     <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
     <link rel="stylesheet" href="{% static "css/main.css" %}">
 </head>
@@ -28,7 +28,7 @@
                                 Library
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{% url "store:all_products" %}">All</a></li>
+                                <li><a class="dropdown-item" href="{% url "store:product_all" %}">All</a></li>
                                 {% for c in categories %}
                                 <li {% if category.slug == c.slug %}class="selected" {% endif %}>
                                     <a class="dropdown-item" href="{{ c.get_absolute_url }}">{{ c.name|title }}</a>

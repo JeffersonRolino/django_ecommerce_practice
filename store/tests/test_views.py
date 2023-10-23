@@ -50,7 +50,7 @@ class TestViewResponses(TestCase):
         request = HttpRequest()
         response = all_products(request)
         html = response.content.decode('utf8')
-        self.assertIn('<title>Home</title>', html)
+        self.assertIn('<title>BookStore</title>', html)
         self.assertTrue(html.startswith('\n<!DOCTYPE html>\n'))
         self.assertEqual(response.status_code, 200)
 
@@ -61,6 +61,6 @@ class TestViewResponses(TestCase):
         request = self.factory.get('/item/django-beginners')
         response = all_products(request)
         html = response.content.decode('utf8')
-        self.assertIn('<title>Home</title>', html)
+        self.assertIn('<title>BookStore</title>', html)
         self.assertTrue(html.startswith('\n<!DOCTYPE html>\n'))
         self.assertEqual(response.status_code, 200)
