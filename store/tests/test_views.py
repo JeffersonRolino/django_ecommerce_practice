@@ -1,5 +1,3 @@
-from unittest import skip
-
 from django.contrib.auth.models import User
 from django.http import HttpRequest
 from django.test import Client, RequestFactory, TestCase
@@ -25,14 +23,14 @@ class TestViewResponses(TestCase):
 
     def test_url_allowed_hosts(self):
         """
-        Test url response status 
+        Test url response status
         """
         response = self.c.get("/")
         self.assertEqual(response.status_code, 200)
 
     def test_product_detail_url(self):
         """
-        Test product response status 
+        Test product response status
         """
         response = self.c.get(
             reverse('store:product_detail', args=['django-beginners']))
@@ -40,14 +38,14 @@ class TestViewResponses(TestCase):
 
     def test_category_detail_url(self):
         """
-        Test Category response status 
+        Test Category response status
         """
         response = self.c.get(reverse('store:category_list', args=['django']))
         self.assertEqual(response.status_code, 200)
 
     def test_homepage_html(self):
         """
-        Test HTML views 
+        Test HTML views
         """
         request = HttpRequest()
         response = all_products(request)
@@ -58,7 +56,7 @@ class TestViewResponses(TestCase):
 
     def test_view_function(self):
         """
-        Test HTML views 
+        Test HTML views
         """
         request = self.factory.get('/item/django-beginners')
         response = all_products(request)
